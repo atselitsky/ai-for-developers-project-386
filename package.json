@@ -1,0 +1,13 @@
+{
+  "name": "ai-for-developers-project-386",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build:typespec": "yarn workspace @ai-for-developers/typespec run build",
+    "watch:typespec": "yarn workspace @ai-for-developers/typespec run watch"
+  }
+}

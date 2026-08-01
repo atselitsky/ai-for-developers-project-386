@@ -1,0 +1,13 @@
+node_modules/
+*.log
+
+# TypeSpec
+packages/typespec/tsp-output/
+
+# Frontend (generated and build)
+packages/frontend/src/api/
+packages/frontend/dist/
+
+# Go backend
+cmd/server/vendor/
+cmd/server/internal/generated/

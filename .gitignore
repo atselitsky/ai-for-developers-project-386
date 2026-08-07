@@ -11,3 +11,7 @@ packages/frontend/dist/
 # Go backend
 cmd/server/vendor/
 cmd/server/internal/generated/
+
+#opencode
+opencode.json
+opencode.jsonc

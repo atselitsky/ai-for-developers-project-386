@@ -1,6 +1,6 @@
-import { describe, it, expect } from 'vitest'
-import { mount } from '@vue/test-utils'
-import App from '../App.vue'
+import { describe, it, expect } from 'vitest';
+import { mount } from '@vue/test-utils';
+import App from '../App.vue';
 
 describe('App', () => {
   it('renders router-view', () => {
@@ -8,7 +8,7 @@ describe('App', () => {
       global: {
         stubs: ['router-view'],
       },
-    })
-    expect(wrapper.html()).toContain('router-view-stub')
-  })
-})
+    });
+    expect(wrapper.html()).toContain('router-view-stub');
+  });
+});

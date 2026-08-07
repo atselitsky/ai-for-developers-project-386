@@ -1,0 +1,2 @@
+#!/bin/sh
+yarn workspace @ai-for-developers/frontend run lint:all

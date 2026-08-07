@@ -1,6 +1,12 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div>Home</div>
+  <div class="home">Home</div>
 </template>
+
+<style scoped>
+.home {
+  color: #333;
+  padding: 20px;
+}
+</style>

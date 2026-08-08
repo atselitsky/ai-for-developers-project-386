@@ -7,7 +7,7 @@ import prettierConfig from 'eslint-config-prettier'
 
 export default [
   {
-    ignores: ['dist/', 'node_modules/', '.husky/'],
+    ignores: ['dist/', 'node_modules/', '.husky/', 'src/api/', 'coverage/'],
   },
   ...vuePlugin.configs['flat/recommended'],
   {

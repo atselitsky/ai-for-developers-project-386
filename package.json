@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "build:typespec": "yarn workspace @ai-for-developers/typespec run build",
-    "watch:typespec": "yarn workspace @ai-for-developers/typespec run watch"
+    "watch:typespec": "yarn workspace @ai-for-developers/typespec run watch",
+    "generate:api": "yarn workspace @ai-for-developers/frontend run generate:api"
   }
 }

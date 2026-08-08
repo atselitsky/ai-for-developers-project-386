@@ -4,25 +4,28 @@ using TypeSpec.Http;
 
 namespace BookingService;
 
-scalar uuid extends string;
-scalar email extends string;
-
 model EventType {
   id: uuid;
   title: string;
   description: string;
+  @minValue(15)
+  @maxValue(480)
   duration: int16;
 }
 
 model CreateEventTypeRequest {
   title: string;
   description: string;
+  @minValue(15)
+  @maxValue(480)
   duration: int16;
 }
 
 model UpdateEventTypeRequest {
   title?: string;
   description?: string;
+  @minValue(15)
+  @maxValue(480)
   duration?: int16;
 }
 
@@ -30,6 +33,7 @@ model Booking {
   id: uuid;
   eventTypeId: uuid;
   guestName: string;
+  @pattern("^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$")
   guestEmail: email;
   comment?: string;
   startTime: utcDateTime;
@@ -40,6 +44,7 @@ model Booking {
 model CreateBookingRequest {
   eventTypeId: uuid;
   guestName: string;
+  @pattern("^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$")
   guestEmail: email;
   comment?: string;
   startTime: utcDateTime;
@@ -53,11 +58,8 @@ model TimeSlot {
 
 model SlotsResponse {
   eventTypeId: uuid;
+  @minValue(15)
+  @maxValue(480)
   duration: int16;
   slots: TimeSlot[];
-}
-
-model Error {
-  code: string;
-  message: string;
 }

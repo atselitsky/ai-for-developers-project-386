@@ -1,6 +1,7 @@
 import "@typespec/http";
 import "@typespec/rest";
 import "@typespec/openapi3";
+import "./common.tsp";
 import "./models.tsp";
 import "./operations.tsp";
 

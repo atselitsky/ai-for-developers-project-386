@@ -13,55 +13,30 @@ interface EventTypes {
   @route("")
   create(
     @body request: CreateEventTypeRequest
-  ): {
-    @body body: EventType;
-  } | {
-    @statusCode _: 409;
-    @body body: Error;
-  };
+  ): CreatedResponse<EventType> | ConflictResponse;
 
   @get
   @route("")
-  list(): {
-    @body body: EventType[];
-  };
+  list(): OkResponse<EventType[]>;
 
   @get
   @route("/{id}")
   get(
     @path id: uuid
-  ): {
-    @body body: EventType;
-  } | {
-    @statusCode _: 404;
-    @body body: Error;
-  };
+  ): MaybeNotFound<EventType>;
 
   @put
   @route("/{id}")
   update(
     @path id: uuid,
     @body request: UpdateEventTypeRequest
-  ): {
-    @body body: EventType;
-  } | {
-    @statusCode _: 404;
-    @body body: Error;
-  };
+  ): MaybeNotFound<EventType>;
 
   @delete
   @route("/{id}")
   delete(
     @path id: uuid
-  ): {
-    @statusCode _: 204;
-  } | {
-    @statusCode _: 404;
-    @body body: Error;
-  } | {
-    @statusCode _: 409;
-    @body body: Error;
-  };
+  ): NoContentResponse | NotFoundResponse | ConflictResponse;
 }
 
 @route("/bookings")
@@ -71,42 +46,23 @@ interface Bookings {
   @route("")
   create(
     @body request: CreateBookingRequest
-  ): {
-    @body body: Booking;
-  } | {
-    @statusCode _: 409;
-    @body body: Error;
-  } | {
-    @statusCode _: 422;
-    @body body: Error;
-  };
+  ): CreatedResponse<Booking> | ConflictResponse | UnprocessableResponse;
 
   @get
   @route("")
-  list(): {
-    @body body: Booking[];
-  };
+  list(): OkResponse<Booking[]>;
 
   @get
   @route("/{id}")
   get(
     @path id: uuid
-  ): {
-    @body body: Booking;
-  } | {
-    @statusCode _: 404;
-    @body body: Error;
-  };
+  ): MaybeNotFound<Booking>;
 
   @delete
   @route("/{id}")
   delete(
     @path id: uuid
-  ): {
-    @statusCode _: 204;
-  } | {
-    @statusCode _: 404;
-  };
+  ): NoContentResponse | NotFoundResponse;
 }
 
 @route("/slots")
@@ -116,10 +72,5 @@ interface TimeSlots {
   @route("")
   getAvailableSlots(
     @query eventTypeId: uuid
-  ): {
-    @body body: SlotsResponse;
-  } | {
-    @statusCode _: 404;
-    @body body: Error;
-  };
+  ): MaybeNotFound<SlotsResponse>;
 }

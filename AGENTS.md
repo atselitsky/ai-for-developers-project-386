@@ -5,7 +5,7 @@
 Монорепозиторий (Yarn workspaces) для сервиса бронирований (аналог Cal.com):
 
 - `packages/typespec/` — TypeSpec спецификация API → генерирует OpenAPI 3.1.0
-- `packages/frontend/` — Vue 3 приложение
+- `packages/frontend/` — Фронтовая часть (Vue 3 + Eslint + Vitest + Vue Test Utils)
 - `cmd/server/` — Go бэкенд
 
 ## Команды
